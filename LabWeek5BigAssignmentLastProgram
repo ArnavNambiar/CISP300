@@ -1,0 +1,46 @@
+# Yum Yum Burger Joint
+
+
+def main():
+ total = 0.0
+ endOrder = "no"
+ endProgram = "no"
+
+
+ while endProgram == "no":
+ print("Enter 1 for Yum Yum Burger")
+ print("Enter 2 for Grease Yum Fries")
+ print("Enter 3 for Soda Yum")
+
+
+ while endOrder == "no":
+ choice = input("Enter now -> ")
+
+
+ if choice == '1':
+ numBurgers = int(input("Enter the number of burgers you want "))
+ total += (numBurgers * 0.99)
+ elif choice == '2':
+ numFries = int(input("Enter the number of fries you want "))
+ total += (numFries * 0.79)
+ elif choice == '3':
+ numSodas = int(input("Enter the number of sodas you want "))
+ total += (numSodas * 1.09)
+ else:
+ print("Invalid choice")
+
+
+ endOrder = input("Do you want to end your order? (yes/no): ")
+
+
+ tax = total * 0.06
+ finalTotal = total + tax
+
+
+ print("The total price is $", finalTotal)
+ endProgram = input("Do you want to end program? (yes/no): ")
+ endOrder = "no" # Reset endOrder for the next order
+
+
+if __name__ == "__main__":
+ main()
